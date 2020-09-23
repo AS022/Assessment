@@ -2,7 +2,9 @@
    <head>
       <title>Form Validation</title>      
       <script type = "text/javascript">
-    function validate() {
+        function validate() {
+        var nameList=['Amrita','Ashish','Shrishti'];
+        var nameLength = name.length;
       
       if( document.myForm.Name.value == "" ) {
          alert( "Please provide your name!" );
@@ -13,12 +15,13 @@
             alert( "Please provide your Email!" );
             document.myForm.EMail.focus() ;
             return false;
-         }var emailID = document.myForm.EMail.value;
+         }
+         var emailID = document.myForm.EMail.value;
          atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
          
          if (atpos < 1 || ( dotpos - atpos < 2 )) {
-            alert("Please enter correct email ID")
+            alert("Please enter correct email ID");
             document.myForm.EMail.focus() ;
             return false;
          }/return( true );/
@@ -53,31 +56,38 @@
             alert('provide your number');
             document.myForm.phone.value=" ";
             document.myForm.phone.focus();
-            return false;
+            
         }
         else if(isNaN(number)){
            alert("number should be number");
            document.myForm.phone.value=" ";
            document.myForm.phone.focus();
-           return false;
+           
         }
         else if(number.length != 10){
              alert("number should not be greater than 10");
              document.myForm.phone.value=" ";
              document.myForm.phone.focus();
-             return false;
+             
         }
-    else{
-		alert("You are registered")
-		document.myForm.Submit();
+        else if(nameList.indexOf(name) !== -1 )
+            {
+                alert('user name exists');
+                document.getElementById('name').focus();
+            }
+        else{
+		        alert("You are registered")
+                document.getElementById("print").innerHTML= 'Registerd Succesfully';
+                document.getElementById("print").innerHTML= "Welcome  " +name ;
+            }
     }
-}
+
 
       </script>      
    </head>
    
    <body>
-      <form name = "myForm" onsubmit = "return(validate());">
+      <form name = "myForm" onsubmit = "return validate()">
          <table cellspacing = "2" cellpadding = "2" border = "1">
             
             <tr>
@@ -108,4 +118,5 @@
          </table>
       </form>      
    </body>
+   <div id="print"></div>
 </html>
