@@ -1,0 +1,111 @@
+<html>   
+   <head>
+      <title>Form Validation</title>      
+      <script type = "text/javascript">
+    function validate() {
+      
+      if( document.myForm.Name.value == "" ) {
+         alert( "Please provide your name!" );
+         document.myForm.Name.focus() ;
+         return false;
+      }
+      if( document.myForm.EMail.value == "" ) {
+            alert( "Please provide your Email!" );
+            document.myForm.EMail.focus() ;
+            return false;
+         }var emailID = document.myForm.EMail.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         
+         if (atpos < 1 || ( dotpos - atpos < 2 )) {
+            alert("Please enter correct email ID")
+            document.myForm.EMail.focus() ;
+            return false;
+         }/return( true );/
+         var pass = document.myForm.password.value;
+         if (pass ==""||pass.length<5){
+		alert("enter valid password");
+		document.myForm.password.value="";
+        document.myForm.password.focus();
+        return false;
+	}else if (!password.match(/[1-9]/)){
+		alert("your password must have a number");
+		document.myForm.password.value="";
+        document.myForm.password.focus();
+        return false;
+    }else if (!password.match(/[A-Z]/)){
+		alert("your password must have an uppercase");
+		document.myForm.password.value="";
+        document.myForm.password.focus();
+        return false;
+    }else if (!password.match(/[a-z]/)){
+		alert("your password must have a lowercase");
+		document.myForm.password.value="";
+        document.myForm.password.focus();
+        return false;
+    }
+    else if (!password.match(/[!@#$%^&*]/)){
+		alert("your password must have a special character");
+		document.myForm.password.value="";
+		document.myForm.password.focus();
+        } var number = document.myForm.phone.value;
+       if(number == "" ){
+            alert('provide your number');
+            document.myForm.phone.value=" ";
+            document.myForm.phone.focus();
+            return false;
+        }
+        else if(isNaN(number)){
+           alert("number should be number");
+           document.myForm.phone.value=" ";
+           document.myForm.phone.focus();
+           return false;
+        }
+        else if(number.length != 10){
+             alert("number should not be greater than 10");
+             document.myForm.phone.value=" ";
+             document.myForm.phone.focus();
+             return false;
+        }
+    else{
+		alert("You are registered")
+		document.myForm.Submit();
+    }
+}
+
+      </script>      
+   </head>
+   
+   <body>
+      <form name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+            
+            <tr>
+               <td align = "right">Name</td>
+               <td><input type = "text" name = "Name" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">EMail</td>
+               <td><input type = "text" name = "EMail" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right">password</td>
+               <td><input type = "text" name = "password" /></td>
+            </tr>
+            
+            <tr>
+                <td align = "right">phone</td>
+                <td><input type = "text" name = "phone" /></td>
+            </tr>
+            
+            <tr>
+               <td align = "right"></td>
+               <td><input type = "submit" value = "Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>      
+   </body>
+</html>
