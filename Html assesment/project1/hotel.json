@@ -1,0 +1,32 @@
+[{
+    "name":"Mountblue",
+    "city":"Mysore",
+    "type":"Veg",
+    "cuisine":["Italian","Chinise","Indian"]
+},
+{
+    "name":"Rohit International",
+    "city":"Sasaram",
+    "type":"Non-veg",
+    "cuisine":["Italian","Indian"]
+},
+{
+    "name":"Radison",
+    "city":"Banglore",
+    "type":"Veg",
+    "cuisine":["Chinise","Indian"]
+},
+{
+    "name":"BNS",
+    "city":"Patna",
+    "type":"Non-Veg",
+    "cuisine":["Italian","Chinise"]
+},
+{
+    "name":"Zaika Palace",
+    "city":"Mysore",
+    "type":"Veg",
+    "cuisine":["Italian","Chinise","Indian"]
+}
+
+]
